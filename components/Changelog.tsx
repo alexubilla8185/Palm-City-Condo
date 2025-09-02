@@ -1,28 +1,39 @@
 
 import React from 'react';
 
-const Changelog: React.FC = () => {
+interface ChangelogProps {
+  onClose: () => void;
+}
+
+const Changelog: React.FC<ChangelogProps> = ({ onClose }) => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <header className="mb-8">
+        <header className="mb-8 relative">
           <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
             Application Changelog
           </h1>
           <p className="mt-2 text-lg text-gray-600">
             A log of all major feature updates and improvements.
           </p>
+          <button 
+            onClick={onClose}
+            className="absolute top-0 right-0 bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors"
+            aria-label="Close changelog"
+          >
+            Close
+          </button>
         </header>
 
         <div className="space-y-12">
 
           <section>
             <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">
-              Version 1.7 - Deployment Fix
+              Version 1.7 - Easter Egg Access
             </h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">
                <li>
-                <strong>Netlify SPA Routing:</strong> Added a `netlify.toml` configuration file to handle client-side routing. This fixes the "Page Not Found" error when directly accessing the hidden `/changes` URL on the live site.
+                <strong>New Backdoor:</strong> Removed the problematic `/changes` URL. The changelog is now accessed via a hidden triple-click on the home icon in the header. This method is more robust and avoids server configuration issues.
               </li>
             </ul>
           </section>
@@ -72,7 +83,7 @@ const Changelog: React.FC = () => {
                 <strong>Share Icon Update:</strong> Replaced the share icon in the header with a more universally recognized "three connected dots" icon and applied the primary red color for better visibility and brand consistency.
               </li>
                <li>
-                <strong>Hidden Changelog:</strong> Added this hidden changelog page, accessible via a secret `/changes` route, to track development progress without cluttering the main UI.
+                <strong>Hidden Changelog:</strong> Added this hidden changelog page, now accessible via a secret triple-click on the home icon, to track development progress.
               </li>
             </ul>
           </section>

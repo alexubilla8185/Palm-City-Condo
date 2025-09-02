@@ -113,18 +113,22 @@ const App: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const [isChangelogVisible, setIsChangelogVisible] = useState(false);
 
   // Use a static URL for sharing to avoid development URLs like blob:
   const propertyUrl = 'https://palm-city-condo.netlify.app';
   
-  // Simple router for the hidden changelog page
-  if (window.location.pathname === '/changes') {
-    return <Changelog />;
+  if (isChangelogVisible) {
+    return <Changelog onClose={() => setIsChangelogVisible(false)} />;
   }
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      <Header onOpenShareModal={() => setIsShareModalOpen(true)} propertyUrl={propertyUrl} />
+      <Header 
+        onOpenShareModal={() => setIsShareModalOpen(true)} 
+        propertyUrl={propertyUrl}
+        onShowChangelog={() => setIsChangelogVisible(true)}
+      />
       <main className="max-w-screen-xl mx-auto p-4 lg:p-8 pb-32">
         
         <PhotoGallery images={propertyData.images} onOpen={() => setIsGalleryModalOpen(true)} />
