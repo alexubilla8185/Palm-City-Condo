@@ -44,10 +44,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenShareModal, propertyUrl }) => {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
       <nav className="max-w-screen-xl mx-auto px-4 lg:px-8 flex justify-between items-center h-16">
-        <div className="flex items-center space-x-3">
-          <a href="#" aria-label="Home" className="flex items-center space-x-3">
+        <div className="flex items-center">
+          <a href="#" aria-label="Home">
             <HomeLogo />
-            <span className="text-xl font-semibold text-gray-800">Charming Palm City Condo</span>
           </a>
         </div>
         <div className="flex items-center">

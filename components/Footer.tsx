@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const EmailIcon: React.FC<{className?: string}> = ({ className }) => (
@@ -15,7 +16,7 @@ const PhoneIcon: React.FC<{className?: string}> = ({ className }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-t border-gray-200 p-3 z-20 lg:hidden">
+    <footer className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-t border-gray-200 px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] z-20 lg:hidden">
       <div className="max-w-screen-xl mx-auto flex justify-around items-center">
         <a 
           href="mailto:pipertecmaster@gmail.com"

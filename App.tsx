@@ -12,6 +12,7 @@ import WhatsSpecial from './components/WhatsSpecial';
 import FactsAndFeatures from './components/FactsAndFeatures';
 import PhotoGalleryModal from './components/PhotoGalleryModal';
 import ShareModal from './components/ShareModal';
+import Changelog from './components/Changelog';
 import type { PropertyDetails } from './types';
 import { propertyImageUrls } from './components/imageList';
 
@@ -115,11 +116,16 @@ const App: React.FC = () => {
 
   // Use a static URL for sharing to avoid development URLs like blob:
   const propertyUrl = 'https://palm-city-condo.netlify.app';
+  
+  // Simple router for the hidden changelog page
+  if (window.location.pathname === '/changes') {
+    return <Changelog />;
+  }
 
   return (
     <div className="min-h-screen bg-white font-sans">
       <Header onOpenShareModal={() => setIsShareModalOpen(true)} propertyUrl={propertyUrl} />
-      <main className="max-w-screen-xl mx-auto p-4 lg:p-8 pb-24">
+      <main className="max-w-screen-xl mx-auto p-4 lg:p-8 pb-32">
         
         <PhotoGallery images={propertyData.images} onOpen={() => setIsGalleryModalOpen(true)} />
         
