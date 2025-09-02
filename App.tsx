@@ -24,7 +24,7 @@ const propertyData: PropertyDetails = {
   beds: 2,
   baths: 2,
   sqft: 1170,
-  description: `Discover your ideal Florida getaway in this beautiful ground-floor condo, nestled in the heart of Palm City. The 2-bedroom, 2-bathroom layout feels expansive thanks to vaulted ceilings and a flowing open floor plan. Step out onto your screened-in patio and enjoy peaceful moments with a stunning lake view. The community provides excellent amenities like a pool and tennis courts, and the location is second to none—close to top schools, great shops, and a variety of restaurants. Whether you're looking for a new family home or a perfect seasonal retreat, this condo offers everything you need for a relaxed Florida lifestyle.`,
+  description: `Discover your ideal Florida getaway in this beautiful ground-floor condo, nestled in the heart of Palm City.`,
   keyFacts: {
     'Type': 'Condo',
     'Built in': '1988',
