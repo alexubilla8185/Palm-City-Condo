@@ -15,6 +15,17 @@ const Changelog: React.FC = () => {
         </header>
 
         <div className="space-y-12">
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">
+              Version 1.7 - Deployment Fix
+            </h2>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+               <li>
+                <strong>Netlify SPA Routing:</strong> Added a `netlify.toml` configuration file to handle client-side routing. This fixes the "Page Not Found" error when directly accessing the hidden `/changes` URL on the live site.
+              </li>
+            </ul>
+          </section>
           
           <section>
             <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">
