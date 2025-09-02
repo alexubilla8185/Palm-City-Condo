@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import type { WhatsSpecial } from '../types';
 
@@ -28,7 +29,7 @@ const WhatsSpecial: React.FC<WhatsSpecialProps> = ({ data }) => {
         </button>
       </div>
       <p className="text-gray-700 leading-relaxed mb-4">{data.description}</p>
-      <p className="text-sm text-gray-500 italic">{data.offMarketNote}</p>
+      {data.offMarketNote && <p className="text-sm text-gray-500 italic">{data.offMarketNote}</p>}
     </div>
   );
 };

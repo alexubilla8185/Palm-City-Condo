@@ -24,7 +24,7 @@ const renderFacts = (facts: any) => {
 const FactsAndFeatures: React.FC<FactsAndFeaturesProps> = ({ data }) => {
   return (
     <div>
-       <h2 className="text-2xl font-bold text-gray-800 mb-4">Facts & features</h2>
+       <h2 className="text-2xl font-bold text-gray-800 mb-4">Facts & Features</h2>
        <div className="space-y-6">
         {Object.entries(data).map(([sectionTitle, sections]) => (
             <div key={sectionTitle}>

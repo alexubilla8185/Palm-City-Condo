@@ -33,9 +33,8 @@ const propertyData: PropertyDetails = {
   },
   images: propertyImageUrls,
   whatsSpecial: {
-    title: "What's special",
+    title: "What's Special",
     description: `2/2 Villa with a detached garage and a Fenced Courtyard, 1,170 Sq/Ft, located in a gated community call Pine Ridge at Martin Down (across from the Library) very nice, quiet and safe community. Close to shopping center and turnpike. Very nice community, laminated wood flooring all through out, update bathrooms. Ready to move in. Won't last long`,
-    offMarketNote: `This property is off market, which means it's not currently listed for sale or rent on Zillow. This may be different from what's available on other websites or public sources.`
   },
   factsAndFeatures: {
     'Interior': {
@@ -84,12 +83,12 @@ const propertyData: PropertyDetails = {
         'Year built': 1988
       }
     },
-    'Community & neighborhood': {
+    'Community & Neighborhood': {
       'Location': {
         'Region': 'Palm City'
       }
     },
-    'HOA & financial': {
+    'HOA & Financial': {
       'HOA': {
         'Has HOA': 'Yes',
         'HOA fee': '$335 monthly'
@@ -127,7 +126,7 @@ const App: React.FC = () => {
             <PropertyInfo {...propertyData} onOpenModal={() => setIsContactModalOpen(true)} />
 
             <div className="mt-8 border-t border-gray-200 pt-8">
-               <h2 className="text-2xl font-bold text-gray-800 mb-4">About this home</h2>
+               <h2 className="text-2xl font-bold text-gray-800 mb-4">About This Home</h2>
                <PropertyDescription description={propertyData.description} />
             </div>
              <div className="mt-8 border-t border-gray-200 pt-8">

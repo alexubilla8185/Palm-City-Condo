@@ -1,7 +1,8 @@
+
 export interface WhatsSpecial {
     title: string;
     description: string;
-    offMarketNote: string;
+    offMarketNote?: string;
 }
 
 export interface FactsAndFeaturesSection {
