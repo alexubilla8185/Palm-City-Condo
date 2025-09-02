@@ -18,6 +18,17 @@ const Changelog: React.FC = () => {
           
           <section>
             <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">
+              Version 1.6 - Visual Polish & Readability
+            </h2>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+               <li>
+                <strong>Contrast & Clarity:</strong> Improved overall readability by darkening the default text color, the borders around information cards, and the separator line under the header. This creates a sharper, more defined user interface.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">
               Version 1.5 - Mobile UX Improvements
             </h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">

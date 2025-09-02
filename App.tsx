@@ -134,21 +134,21 @@ const App: React.FC = () => {
             <PropertyInfo {...propertyData} onOpenModal={() => setIsContactModalOpen(true)} />
             
             <div className="mt-8 space-y-8">
-              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
-                 <h2 className="text-2xl font-extrabold text-gray-800 mb-4">About This Home</h2>
+              <div className="border border-gray-300 rounded-xl shadow-md p-4 md:p-6">
+                 <h2 className="text-2xl font-extrabold text-gray-900 mb-4">About This Home</h2>
                  <PropertyDescription description={propertyData.description} />
               </div>
               
-              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
-                  <h2 className="text-2xl font-extrabold text-gray-800 mb-4">Key Facts</h2>
+              <div className="border border-gray-300 rounded-xl shadow-md p-4 md:p-6">
+                  <h2 className="text-2xl font-extrabold text-gray-900 mb-4">Key Facts</h2>
                   <KeyFacts facts={propertyData.keyFacts} />
               </div>
 
-              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
+              <div className="border border-gray-300 rounded-xl shadow-md p-4 md:p-6">
                   <WhatsSpecial data={propertyData.whatsSpecial} />
               </div>
 
-              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
+              <div className="border border-gray-300 rounded-xl shadow-md p-4 md:p-6">
                   <FactsAndFeatures data={propertyData.factsAndFeatures} />
               </div>
             </div>
