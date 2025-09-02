@@ -7,7 +7,7 @@ interface PropertyDescriptionProps {
 
 const PropertyDescription: React.FC<PropertyDescriptionProps> = ({ description }) => {
   return (
-    <p className="text-gray-700 leading-relaxed">
+    <p className="leading-loose">
       {description}
     </p>
   );

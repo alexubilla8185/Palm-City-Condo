@@ -44,8 +44,8 @@ const KeyFacts: React.FC<KeyFactsProps> = ({ facts }) => {
             <div key={key} className="flex items-start">
                 {Icon && <Icon className="w-6 h-6 text-gray-500 mr-3 shrink-0 mt-0.5" />}
                 <div>
-                    <dt className="text-base text-gray-800">{value}</dt>
-                    <dd className="text-sm text-gray-500">{key}</dd>
+                    <dt className="text-base">{value}</dt>
+                    <dd className="text-sm text-gray-600">{key}</dd>
                 </div>
             </div>
         );

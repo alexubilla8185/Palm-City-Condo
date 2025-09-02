@@ -11,6 +11,7 @@ import ContactModal from './components/ContactModal';
 import WhatsSpecial from './components/WhatsSpecial';
 import FactsAndFeatures from './components/FactsAndFeatures';
 import PhotoGalleryModal from './components/PhotoGalleryModal';
+import ShareModal from './components/ShareModal';
 import type { PropertyDetails } from './types';
 import { propertyImageUrls } from './components/imageList';
 
@@ -24,7 +25,7 @@ const propertyData: PropertyDetails = {
   beds: 2,
   baths: 2,
   sqft: 1170,
-  description: `Discover your ideal Florida getaway in this beautiful ground-floor condo, nestled in the heart of Palm City.`,
+  description: `Discover your ideal Florida getaway in this beautiful ground-floor condo, nestled in the heart of Palm City. The 2-bedroom, 2-bathroom layout feels expansive thanks to vaulted ceilings and a flowing open floor plan. Step out onto your screened-in patio and enjoy peaceful moments with a stunning lake view. The community provides excellent amenities like a pool and tennis courts, and the location is second to none—close to top schools, great shops, and a variety of restaurants. Whether you're looking for a new family home or a perfect seasonal retreat, this condo offers everything you need for a relaxed Florida lifestyle.`,
   keyFacts: {
     'Type': 'Condo',
     'Built in': '1988',
@@ -110,10 +111,14 @@ const propertyData: PropertyDetails = {
 const App: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+
+  // Use a static URL for sharing to avoid development URLs like blob:
+  const propertyUrl = 'https://palm-city-condo.netlify.app';
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      <Header />
+      <Header onOpenShareModal={() => setIsShareModalOpen(true)} propertyUrl={propertyUrl} />
       <main className="max-w-screen-xl mx-auto p-4 lg:p-8 pb-24">
         
         <PhotoGallery images={propertyData.images} onOpen={() => setIsGalleryModalOpen(true)} />
@@ -121,20 +126,25 @@ const App: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mt-8">
           <div className="lg:col-span-2">
             <PropertyInfo {...propertyData} onOpenModal={() => setIsContactModalOpen(true)} />
+            
+            <div className="mt-8 space-y-8">
+              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
+                 <h2 className="text-2xl font-extrabold text-gray-800 mb-4">About This Home</h2>
+                 <PropertyDescription description={propertyData.description} />
+              </div>
+              
+              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
+                  <h2 className="text-2xl font-extrabold text-gray-800 mb-4">Key Facts</h2>
+                  <KeyFacts facts={propertyData.keyFacts} />
+              </div>
 
-            <div className="mt-8 border-t border-gray-200 pt-8">
-               <h2 className="text-2xl font-bold text-gray-800 mb-4">About This Home</h2>
-               <PropertyDescription description={propertyData.description} />
-            </div>
-             <div className="mt-8 border-t border-gray-200 pt-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Key Facts</h2>
-                <KeyFacts facts={propertyData.keyFacts} />
-            </div>
-            <div className="mt-8 border-t border-gray-200 pt-8">
-                <WhatsSpecial data={propertyData.whatsSpecial} />
-            </div>
-            <div className="mt-8 border-t border-gray-200 pt-8">
-                <FactsAndFeatures data={propertyData.factsAndFeatures} />
+              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
+                  <WhatsSpecial data={propertyData.whatsSpecial} />
+              </div>
+
+              <div className="border border-gray-200 rounded-xl shadow-md p-4 md:p-6">
+                  <FactsAndFeatures data={propertyData.factsAndFeatures} />
+              </div>
             </div>
           </div>
           
@@ -148,6 +158,7 @@ const App: React.FC = () => {
       <Footer />
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
       <PhotoGalleryModal isOpen={isGalleryModalOpen} onClose={() => setIsGalleryModalOpen(false)} images={propertyData.images} />
+      <ShareModal isOpen={isShareModalOpen} onClose={() => setIsShareModalOpen(false)} propertyUrl={propertyUrl} />
     </div>
   );
 };

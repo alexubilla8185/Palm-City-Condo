@@ -12,7 +12,7 @@ const WhatsSpecial: React.FC<WhatsSpecialProps> = ({ data }) => {
   if (isHidden) {
     return (
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-800">{data.title}</h2>
+        <h2 className="text-2xl font-extrabold text-gray-800">{data.title}</h2>
         <button onClick={() => setIsHidden(false)} className="text-sm font-semibold text-primary hover:underline">
           Show
         </button>
@@ -23,13 +23,13 @@ const WhatsSpecial: React.FC<WhatsSpecialProps> = ({ data }) => {
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold text-gray-800">{data.title}</h2>
+        <h2 className="text-2xl font-extrabold text-gray-800">{data.title}</h2>
         <button onClick={() => setIsHidden(true)} className="text-sm font-semibold text-primary hover:underline">
           Hide
         </button>
       </div>
-      <p className="text-gray-700 leading-relaxed mb-4">{data.description}</p>
-      {data.offMarketNote && <p className="text-sm text-gray-500 italic">{data.offMarketNote}</p>}
+      <p className="leading-loose mb-4">{data.description}</p>
+      {data.offMarketNote && <p className="text-sm text-gray-600 italic">{data.offMarketNote}</p>}
     </div>
   );
 };

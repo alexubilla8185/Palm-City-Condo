@@ -10,10 +10,10 @@ const PropertyInfo: React.FC<PropertyInfoProps> = ({ address, beds, baths, sqft,
   return (
     <div className="md:flex md:justify-between md:items-start">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">{address.street}</h1>
-        <p className="text-gray-600 mt-1">{`${address.city}, ${address.state} ${address.zip}`}</p>
+        <h1 className="text-3xl font-extrabold text-gray-900">{address.street}</h1>
+        <p className="text-gray-700 mt-1">{`${address.city}, ${address.state} ${address.zip}`}</p>
 
-        <div className="flex items-center space-x-2 text-gray-700 mt-4">
+        <div className="flex items-center space-x-2 mt-4">
           <span>{beds} beds</span>
           <span className="text-gray-400">&middot;</span>
           <span>{baths} baths</span>

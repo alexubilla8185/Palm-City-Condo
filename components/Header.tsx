@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const HomeLogo: React.FC = () => (
@@ -7,8 +8,39 @@ const HomeLogo: React.FC = () => (
     </svg>
 );
 
+const ConnectedDotsShareIcon: React.FC<{className?: string}> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.15-4.14c.52.47 1.2.77 1.96.77c1.66 0 3-1.34 3-3s-1.34-3-3-3s-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.52 9.34 6.81 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.81 0 1.52-.34 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65c0 1.66 1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"/>
+    </svg>
+);
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenShareModal: () => void;
+  propertyUrl: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenShareModal, propertyUrl }) => {
+  const handleShareClick = async () => {
+    const shareData = {
+      title: document.title,
+      text: 'Check out this beautiful ground-floor condo in Palm City!',
+      url: propertyUrl,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Could not share:', err);
+        // Fallback if user cancels or there's an error
+        onOpenShareModal();
+      }
+    } else {
+      // Fallback for browsers without navigator.share
+      onOpenShareModal();
+    }
+  };
+
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
       <nav className="max-w-screen-xl mx-auto px-4 lg:px-8 flex justify-between items-center h-16">
@@ -17,6 +49,16 @@ const Header: React.FC = () => {
             <HomeLogo />
             <span className="text-xl font-semibold text-gray-800">Charming Palm City Condo</span>
           </a>
+        </div>
+        <div className="flex items-center">
+            <button 
+                onClick={handleShareClick}
+                className="flex items-center space-x-2 text-primary font-semibold py-2 px-4 rounded-lg hover:bg-red-50 transition-colors"
+                aria-label="Share this property"
+            >
+                <ConnectedDotsShareIcon className="w-5 h-5" />
+                <span>Share</span>
+            </button>
         </div>
       </nav>
     </header>
