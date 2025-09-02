@@ -24,7 +24,7 @@ const propertyData: PropertyDetails = {
   beds: 2,
   baths: 2,
   sqft: 1170,
-  description: `Welcome to this charming and beautifully maintained 2-bedroom, 2-bathroom condo in the desirable community of Palm City. This desirable first-floor (ground level), single-story unit offers a spacious and open floor plan with vaulted ceilings, creating a bright and airy atmosphere. Enjoy serene lake views from your private screened-in balcony. The community features a pool, tennis courts, and is conveniently located near top-rated schools, shopping, and dining. Perfect for first-time homebuyers, seasonal residents, or anyone looking for a peaceful Florida lifestyle.`,
+  description: `Discover your ideal Florida getaway in this beautiful ground-floor condo, nestled in the heart of Palm City. The 2-bedroom, 2-bathroom layout feels expansive thanks to vaulted ceilings and a flowing open floor plan. Step out onto your screened-in patio and enjoy peaceful moments with a stunning lake view. The community provides excellent amenities like a pool and tennis courts, and the location is second to none—close to top schools, great shops, and a variety of restaurants. Whether you're looking for a new family home or a perfect seasonal retreat, this condo offers everything you need for a relaxed Florida lifestyle.`,
   keyFacts: {
     'Type': 'Condo',
     'Built in': '1988',
@@ -35,7 +35,7 @@ const propertyData: PropertyDetails = {
   images: propertyImageUrls,
   whatsSpecial: {
     title: "What's Special",
-    description: `2/2 Villa with a detached garage and a Fenced Courtyard, 1,170 Sq/Ft, located in a gated community call Pine Ridge at Martin Down (across from the Library) very nice, quiet and safe community. Close to shopping center and turnpike. Very nice community, laminated wood flooring all through out, update bathrooms. Ready to move in. Won't last long`,
+    description: `This fantastic 2-bed, 2-bath condo is perfectly located in the safe and quiet Pine Ridge at Martin Downs—a gated community across from the library. The 1,170 sq ft home comes with a detached garage and a private fenced courtyard. Inside, you'll find updated bathrooms and new wood flooring throughout. With easy access to shopping and the turnpike, this home won't last long.`,
   },
   factsAndFeatures: {
     'Interior': {
